@@ -1,1 +1,19 @@
-
+version: 2
+updates:
+  - package-ecosystem: "gradle"
+    directory: "/app"
+    schedule:
+      interval: "weekly"
+    assignees:
+      - "nicolas-gatta"
+    labels:
+      - "dependencies"
+      - "gradle"
+      
+  - package-ecosystem: "github-actions"
+    directory: "/.github/workflows"
+    schedule:
+      interval: "daily"
+    labels:
+      - "dependencies"
+      - "github-actions"
