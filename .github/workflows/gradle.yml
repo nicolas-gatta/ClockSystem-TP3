@@ -7,6 +7,9 @@
 
 name: Java CI with Gradle
 
+env:
+  DISPLAY: ":99.0" 
+
 on:
   push:
     branches: [ "main" ]
@@ -19,7 +22,12 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-
+  
+    services:
+      xvfb:
+        image: selenium/standalone-chrome:latest
+        options: -e VNC_SERVER=true -e VNC_PORT=5900
+    
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 21
@@ -27,7 +35,10 @@ jobs:
       with:
         java-version: '21'
         distribution: 'temurin'
-
+        
+    - name: Start Xvfb
+      run: Xvfb $DISPLAY -ac -screen 0 1600x1200x24 > /dev/null 2>&1 &
+    
     - name: Setup Gradle 8.10
       uses: gradle/actions/setup-gradle@v4
       with:
@@ -43,5 +54,5 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: test-reports
-        path: build/reports/tests/  # Path where Gradle saves test reports
+        path: app/build/reports/tests/  # Path where Gradle saves test reports
       
