@@ -4,8 +4,6 @@ updates:
     directory: "/app"
     schedule:
       interval: "weekly"
-    assignees:
-      - "nicolas-gatta"
     labels:
       - "dependencies"
       - "gradle"
