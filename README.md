@@ -2,7 +2,7 @@
 
 # ClockSystem
 
-All test: ![Build Status](https://github.com/nicolas-gatta/ClockSystem-TP3/actions/workflows/gradle.yml/badge.svg)
+Gradle Tests: ![Build Status](https://github.com/nicolas-gatta/ClockSystem-TP3/actions/workflows/gradle.yml/badge.svg)
 
 Code Analysis: ![Build Status](https://github.com/nicolas-gatta/ClockSystem-TP3/actions/workflows/pmd.yml/badge.svg)
 
