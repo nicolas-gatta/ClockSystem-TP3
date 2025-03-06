@@ -4,6 +4,8 @@ updates:
     directory: "/app"
     schedule:
       interval: "weekly"
+    assignees:
+      - "nicolas-gatta"
     labels:
       - "dependencies"
       - "gradle"
@@ -12,6 +14,8 @@ updates:
     directory: "/.github/workflows"
     schedule:
       interval: "daily"
+    assignees:
+      - "nicolas-gatta"
     labels:
       - "dependencies"
       - "github-actions"
